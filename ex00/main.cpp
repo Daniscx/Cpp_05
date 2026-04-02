@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmaestro <dmaestro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 12:41:13 by dmaestro          #+#    #+#             */
-/*   Updated: 2026/02/28 15:50:17 by dmaestro         ###   ########.fr       */
+/*   Updated: 2026/04/02 18:09:33 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,43 @@
 
 int main()
 {
-    Burocrats paco("paco", 3);
-    Burocrats pepe(paco);
-    Burocrats francisco("francisco", 120);
-
-    try{
+    try {
+        Burocrats paco("paco", -12); 
         paco.IncreaseGrade();
-    }
-    catch(const std::exception &e)
+        paco.IncreaseGrade();
+        paco.IncreaseGrade();
+        std::cout << paco << std::endl;
+    } 
+     catch(const std::exception &e){
+        std::cerr << e.what() << std::endl;
+     }
+    
+    try
     {
-        std::cout << paco  << " "<< e.what()  << std::endl;
+        Burocrats pepe("pepe", 147);
+        pepe.DecreaseGrade();
+        pepe.DecreaseGrade();
+        pepe.DecreaseGrade();
+         std::cout << pepe << std::endl;
+        
     }
-      try{
-        francisco.DecreaseGrade();
-    }
-    catch(const std::exception &e)
+    catch(const std::exception& e)
     {
-        std::cout << francisco << " "<< e.what() << std::endl;
+        std::cerr << e.what() << std::endl;
+    }
+    
+    try
+    {
+          Burocrats francisco("francisco", 3);
+          francisco.IncreaseGrade();
+          francisco.IncreaseGrade();
+          francisco.IncreaseGrade();
+          std::cout << francisco << std::endl;
+        
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
     }
     return 0;
 }

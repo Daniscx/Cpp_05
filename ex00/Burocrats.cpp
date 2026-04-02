@@ -6,20 +6,24 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 14:34:20 by dmaestro          #+#    #+#             */
-/*   Updated: 2026/02/28 15:38:47 by dmaestro         ###   ########.fr       */
+/*   Updated: 2026/04/02 18:35:44 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Burocrats.hpp"
 
-Burocrats::Burocrats() : name("")
+Burocrats::Burocrats() : name("default_Burocrat")
 {
     std::cout << "Burocrats default constructor caled" << std::endl;
-    this->grade = 0;
+    this->grade = 75;
 }
 Burocrats::Burocrats(const std::string &name, const int& Grade) : name(name)
 {
     std::cout << "Burocrats asignation constructor called" << std::endl;
+    if(Grade < 1)
+        throw GradeTooHightException();
+    else if(Grade > 150)
+        throw GradeTooLowException();
     this->grade = Grade;
 }
 Burocrats::Burocrats(const Burocrats& other) : name(other.name)
@@ -29,11 +33,11 @@ Burocrats::Burocrats(const Burocrats& other) : name(other.name)
 }
 const char* Burocrats::GradeTooHightException::what() const throw()
 {
-    return("EXCEPTION::Too Hight level to  be Increased");
+    return("EXCEPTION::Too Hight level");
 }
 const char* Burocrats::GradeTooLowException::what() const throw()
 {
-    return("EXCEPTION::Too Low level to  be Decreased");
+    return("EXCEPTION::Too Low level");
 }
 void Burocrats::IncreaseGrade()
 {
@@ -46,7 +50,7 @@ void Burocrats::IncreaseGrade()
 Burocrats Burocrats::operator=(const Burocrats& other)
 {
    
-    return( Burocrats(other));
+    return(Burocrats(other));
 }
 void Burocrats::DecreaseGrade()
 {

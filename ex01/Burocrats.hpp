@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 12:42:04 by dmaestro          #+#    #+#             */
-/*   Updated: 2026/02/28 15:32:42 by dmaestro         ###   ########.fr       */
+/*   Updated: 2026/04/02 21:02:26 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include "exception"
 #include "iostream"
 
+class Form;
 class Burocrats {
     
     private:
@@ -30,6 +31,7 @@ class Burocrats {
     ~Burocrats();
     void IncreaseGrade();
     void DecreaseGrade();
+    void singForm(Form& Form);
     class GradeTooHightException : public std::exception
     {
         public:
