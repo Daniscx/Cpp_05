@@ -6,18 +6,18 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 12:41:13 by dmaestro          #+#    #+#             */
-/*   Updated: 2026/04/07 15:25:08 by dmaestro         ###   ########.fr       */
+/*   Updated: 2026/04/07 18:56:12 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Burocrats.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 int main()
 {
     try {
         Burocrats paco("paco", -12); 
-        AForm pvb("pvb", 12, 30);
+        Form pvb("pvb", 12, 30);
         paco.IncreaseGrade();
         paco.IncreaseGrade();
         paco.IncreaseGrade();
@@ -31,7 +31,7 @@ int main()
     try
     {
         Burocrats pepe("pepe", 137);
-        AForm citi("citi", 140, 149);
+        Form citi("citi", 140, 149);
         pepe.DecreaseGrade();
         pepe.DecreaseGrade();
         pepe.DecreaseGrade();

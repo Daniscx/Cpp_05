@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 15:11:33 by dmaestro          #+#    #+#             */
-/*   Updated: 2026/04/07 15:25:08 by dmaestro         ###   ########.fr       */
+/*   Updated: 2026/04/07 18:57:19 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
 AForm::AForm() : name(), sign(false), singRank(), executeRank()
 {
@@ -39,6 +39,15 @@ const std::string& AForm::getName() const
 {
     return(this->name);
 }
+AForm::~AForm()
+{
+   std::cout << "Aform destructor called" << std::endl; 
+}
+
+AForm::~AForm()
+{
+    std::cout << "Form copy destructor called"  << std::endl;
+}
 void AForm::beSigned(const Burocrats& burocrats)
 {
     if(burocrats.GetGrade() <= this->singRank)
@@ -48,16 +57,25 @@ void AForm::beSigned(const Burocrats& burocrats)
     }
     else
         throw GradeTooLowException();
-       
+    
 }
-AForm::~AForm()
+const char* AForm::Unsigned::what() const throw()
 {
-    std::cout << "Form copy destructor called"  << std::endl;
+    return("Is unsigned");
 }
-AForm  AForm::operator=(const AForm& other)
+
+void AForm::execute(const Burocrats& executor)const
 {
-    return(AForm(other));
+    if(this->sign != true)
+        throw(Unsigned());
+    if(executor.GetGrade() > this->singRank)
+        throw(GradeTooHightException());
+    
 }
+//AForm  AForm::operator=(const AForm& other)
+//{
+  //  return(AForm(other));
+//}
 const char* AForm::GradeTooHightException::what() const throw()
 {
     return("Level too hight");

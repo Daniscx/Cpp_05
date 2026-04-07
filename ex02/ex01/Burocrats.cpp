@@ -6,12 +6,12 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 14:34:20 by dmaestro          #+#    #+#             */
-/*   Updated: 2026/04/07 15:25:08 by dmaestro         ###   ########.fr       */
+/*   Updated: 2026/04/07 19:08:13 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Burocrats.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Burocrats::Burocrats() : name("default_Burocrat")
 {
@@ -78,7 +78,20 @@ const std::string& Burocrats::getName() const
 {
     return(this->name);
 }
-
+ void Burocrats::executeForm(AForm const & form) const 
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << *this << "execute" << form << std::endl;
+        form.beExecute(*this);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << *this  << "couldn't execute " << form << "because " << e.what() << std::endl;
+    }
+    
+}
 const int& Burocrats::GetGrade() const
 {
     return(this->grade);

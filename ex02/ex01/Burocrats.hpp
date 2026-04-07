@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   Burocrats.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/05 14:53:50 by dmaestro          #+#    #+#             */
-/*   Updated: 2026/04/07 15:25:08 by dmaestro         ###   ########.fr       */
+/*   Created: 2026/02/28 12:42:04 by dmaestro          #+#    #+#             */
+/*   Updated: 2026/04/07 16:31:24 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef BUROCRATS_HPP
+# define BUROCRATS_HPP
 
-#include "Burocrats.hpp"
-#include "stdbool.h"
+#include "stdlib.h"
+#include "exception"
+#include "iostream"
 
-class AForm
-{
-    private :
-    std::string name;
-    bool sign;
-    const int singRank;
-    const int executeRank;
-    public :
-    AForm();
-    AForm(const std::string& name, const int execrank, const int singrank);
-    AForm(const AForm& other);
- const std::string &   getName() const ;
-    ~AForm();
-  void   beSigned(const Burocrats &burocrat);
-   AForm operator=(const AForm& other);
-
+class AForm;
+class Burocrats {
+    
+    private:
+    const std::string name;
+    int grade;
+    public:
+    Burocrats();
+    Burocrats(const std::string &name, const int& Grade);
+    Burocrats(const Burocrats& other);
+    Burocrats operator=(const Burocrats& other);
+    ~Burocrats();
+    void IncreaseGrade();
+    void DecreaseGrade();
+    void singForm(AForm& Form);
+    void executeForm(AForm const & form) const ;
     class GradeTooHightException : public std::exception
     {
         public:
@@ -42,8 +43,10 @@ class AForm
         public:
             const char* what() const throw();
     };
-};
-std::ostream& operator<<(std::ostream& os, const AForm& fixed);
+   const  std::string& getName() const;
+   const     int&    GetGrade() const;
 
+};
+std::ostream& operator<<(std::ostream& os, const Burocrats& fixed);
 
 #endif
