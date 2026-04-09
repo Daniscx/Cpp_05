@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 19:14:42 by dmaestro          #+#    #+#             */
-/*   Updated: 2026/04/07 19:16:16 by dmaestro         ###   ########.fr       */
+/*   Updated: 2026/04/09 16:11:59 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
     ~RobotomyRequestForm();
     RobotomyRequestForm(const RobotomyRequestForm& other);
     RobotomyRequestForm operator=(const RobotomyRequestForm& other);
-void Beexecute(Burocrats const & executor) const;
+void beExecute(Burocrats const & executor) const;
 
 };
 #endif

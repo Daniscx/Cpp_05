@@ -2,7 +2,7 @@ NAME = a.out
 
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
-CFILES = main.cpp  Burocrats.cpp Form.cpp
+CFILES = main.cpp  Burocrats.cpp AForm.cpp PresidentialPardonForm.cpp  RobotomyRequestForm.cpp  ShrubberyCreationForm.cpp
 
 OBJECTS = $(CFILES:.cpp=.o)
 

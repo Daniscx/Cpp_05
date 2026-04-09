@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 15:11:33 by dmaestro          #+#    #+#             */
-/*   Updated: 2026/04/07 18:57:19 by dmaestro         ###   ########.fr       */
+/*   Updated: 2026/04/09 16:24:45 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,7 @@ AForm::~AForm()
    std::cout << "Aform destructor called" << std::endl; 
 }
 
-AForm::~AForm()
-{
-    std::cout << "Form copy destructor called"  << std::endl;
-}
+
 void AForm::beSigned(const Burocrats& burocrats)
 {
     if(burocrats.GetGrade() <= this->singRank)

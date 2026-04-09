@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 15:45:01 by dmaestro          #+#    #+#             */
-/*   Updated: 2026/04/07 19:13:19 by dmaestro         ###   ########.fr       */
+/*   Updated: 2026/04/09 16:27:20 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,12 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target)  : AForm
   this->target = target;
   this->sign = false;   
 }
-
-
-void ShrubberyCreationForm::Beexecute(const Burocrats& executor)const
+ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-    std::cout <<"Creates a file " << this->target << "_shrubbery in the working directory and writes ASCII trees inside it" << std::endl;
+    std::cout << "ShrubberyCreationForm destructor called" << std::endl;
+}
+
+void ShrubberyCreationForm::beExecute(const Burocrats& executor)const
+{
+    std::cout << executor <<" creates a file " << this->target << "_shrubbery in the working directory and writes ASCII trees inside it" << std::endl;
 }
