@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 19:17:01 by dmaestro          #+#    #+#             */
-/*   Updated: 2026/04/09 18:44:55 by dmaestro         ###   ########.fr       */
+/*   Updated: 2026/04/09 16:26:32 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ void RobotomyRequestForm::beExecute(const Burocrats& executor)const
     switch (i)
     {
     case 0:
-        std::cout << "bzbzbz bzbzbz " << target << " has been robotomized" <<  "by" << executor <<std::endl;
+        std::cout << "bzbzbz bzbzbz" << target << "has been robotomized" <<  "by" << executor <<std::endl;
         break;
     case 1:
-        std::cout << "BOOOOOOOOOOOM " << target << " refused to be robotomized and destroyed the machine now the lab has the need to be repair" << std::endl;
+        std::cout << "BOOOOOOOOOOOM" << target << " refused to be robotomized and destroyed the machine now the lab has the need to be repair" << std::endl;
     default:
         break;
     }

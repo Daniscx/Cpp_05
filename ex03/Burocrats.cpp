@@ -6,7 +6,7 @@
 /*   By: dmaestro <dmaestro@student.42madrid.con    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 14:34:20 by dmaestro          #+#    #+#             */
-/*   Updated: 2026/04/09 18:46:01 by dmaestro         ###   ########.fr       */
+/*   Updated: 2026/04/09 18:46:40 by dmaestro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void Burocrats::singForm(AForm &form)
    } 
    catch(std::exception &e)
    {
-    std::cerr << *this << "couldn't sing" << form << " because " << e.what() << std::endl;
+    std::cerr << *this << " couldn't sing " << form << " because " << e.what() << std::endl;
    }
 }
 Burocrats::~Burocrats()
@@ -88,7 +88,7 @@ const std::string& Burocrats::getName() const
     }
     catch(const std::exception& e)
     {
-        std::cerr << *this  << " couldn't execute " << form << "because " << e.what() << std::endl;
+        std::cerr << *this  << " couldn't execute " << form << " because " << e.what() << std::endl;
     }
     
 }
